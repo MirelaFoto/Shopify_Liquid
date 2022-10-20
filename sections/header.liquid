@@ -1,0 +1,41 @@
+
+
+<header class="header">
+<h1> Shopify: Test__HELLO I am </h1>
+<h2>{{shop.name}} </h2>
+
+<ul>
+<!-- Main menu -->
+{% for link in linklists.main-menu.links -%}
+  <li>{{ link.title | link_to: link.url }}</li>
+{%- endfor %}
+</ul>
+
+
+</header>
+<style>
+.header{
+    background-color:{{section.settings.bg}};
+}
+</style>
+
+{% schema %}
+{
+    "name":"Header",
+    "settings":[
+        {
+            "type":"checkbox",
+            "id":"show_header",
+            "label":"Show header",
+            "default":true
+        },
+         {
+            "type":"color",
+            "id":"bg",
+            "label":"Background color",
+            "default":"#ffffff"
+        }
+    ]
+}
+
+{% endschema %}

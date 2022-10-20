@@ -1,0 +1,15 @@
+
+
+<header>
+<h1> Shopify: Test__HELLO I am </h1>
+<h2>{{shop.name}} </h2>
+
+<ul>
+<!-- Main menu -->
+{% for link in linklists.main-menu.links -%}
+  <li>{{ link.title | link_to: link.url }}</li>
+{%- endfor %}
+</ul>
+
+
+</header>
